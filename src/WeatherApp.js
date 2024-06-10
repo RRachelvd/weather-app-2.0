@@ -11,7 +11,7 @@ export default function WeatherApp() {
   };
 
   return (
-    <div className="WeatherApp">
+    <div className="WeatherApp grid">
       <div className="weather-info-left">
         <h1>{weatherData.city}</h1>
 

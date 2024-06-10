@@ -20,6 +20,10 @@ a {
   font-weight: 600;
 }
 
+p {
+  font-size: 17px;
+}
+
 .weather-app-container {
   background: var(--background-color);
   max-width: 660px;
@@ -40,8 +44,8 @@ header {
   background-color: var(--form-background);
   border: none;
   color: rgba(26, 21, 44, 0.6);
-  font-size: 16px;
-  padding: 18px;
+  font-size: 18px;
+  padding: 16px;
   width: 75%;
   border-radius: 6px;
   margin-right: 10px;
@@ -52,7 +56,7 @@ header {
   border: none;
   color: white;
   font-size: 20px;
-  padding: 18px;
+  padding: 14.5px;
   width: 20%;
   border-radius: 6px;
   transition: all 150ms ease-in-out;
@@ -112,6 +116,11 @@ h1 {
   color: var(--info-color);
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
 main {
   margin-bottom: 45px;
 }
@@ -160,5 +169,28 @@ footer {
   color: var(--info-color);
   text-align: center;
   padding-top: 32px;
-  font-size: 14px;
+  font-size: 15px;
+}
+
+@media (max-width: 850px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .weather-app-container {
+    width: 88%;
+    margin-top: 27px;
+    margin-bottom: 27px;
+    padding: 25px;
+  }
+  .search-input {
+    width: 65%;
+    padding: 10px 15px;
+    font-size: 17px;
+  }
+  .search-button {
+    width: 30%;
+    padding: 10px 15px;
+    font-size: 17px;
+  }
 }
