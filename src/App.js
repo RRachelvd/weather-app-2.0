@@ -1,13 +1,23 @@
 import "./App.css";
+import Form from "./Form.js";
+import Forecast from "./Forecast.js";
+import WeatherApp from "./WeatherApp";
 
 export default function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <h1>Weather App 2.0</h1>
-        <div className="btn btn-primary">hello</div>
-        <footer>
-          Coded by{" "}
+    <div className="weather-app-container">
+      <header>
+        <Form />
+      </header>
+      <main>
+        <WeatherApp />
+        <Forecast />
+        <div className="weather-forecast" id="forecast"></div>
+      </main>
+
+      <footer>
+        <div>
+          Coded by {` `}
           <a
             href="https://github.com/RRachelvd"
             target="_blank"
@@ -15,24 +25,26 @@ export default function App() {
           >
             Rachèl van Dijkhorst
           </a>
-          , open-sourced on{" "}
+          , open-sourced on {` `}
           <a
-            href="https://github.com/RRachelvd/weather-app-2.0"
+            href="https://github.com/RRachelvd/react-weather"
             target="_blank"
             rel="noreferrer"
           >
             Github
-          </a>{" "}
-          and hosted on{" "}
+          </a>
+          {` `}
+          and hosted on {` `}
           <a
-            href="https://react-weather-app-by-rachel.netlify.app/"
+            href="https://willitrainornot.netlify.app"
             target="_blank"
             rel="noreferrer"
           >
             Netlify
           </a>
-        </footer>
-      </div>
+        </div>
+      </footer>
+      <script></script>
     </div>
   );
 }
