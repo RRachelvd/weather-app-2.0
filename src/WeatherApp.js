@@ -45,6 +45,7 @@ export default function WeatherApp() {
         </span>
         <span className="weather-app-unit">°C</span>
       </div>
+      <div className="weather-forecast" id="forecast"></div>
     </div>
   );
 }
