@@ -3,7 +3,7 @@ import "./App.css";
 export default function App() {
   return (
     <div className="App">
-      <div>Weather App 2.0</div>
+      <h1>Weather App 2.0</h1>
       <footer>
         Coded by
         <a href="https://github.com/RRachelvd" target="_blank" rel="noreferrer">
