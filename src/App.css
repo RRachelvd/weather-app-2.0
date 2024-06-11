@@ -125,6 +125,10 @@ main {
   margin-bottom: 45px;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .weather-forecast {
   margin-top: 35px;
   text-align: center;

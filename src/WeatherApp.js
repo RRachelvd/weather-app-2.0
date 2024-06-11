@@ -1,51 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 export default function WeatherApp() {
-  let weatherData = {
-    city: "Leeuwarden",
-    date: "Tuesday 12:04,",
-    description: "Overcast clouds",
-    humidity: 66,
-    wind: 4.7,
-    temperature: 18,
-  };
+  const [ready, setReady] = useState(false);
+  const [weather, setWeather] = useState({});
 
-  return (
-    <div className="WeatherApp grid">
-      <div className="weather-info-left">
-        <h1>{weatherData.city}</h1>
+  function handleResponse(response) {
+    console.log(response.data);
+    setWeather({
+      temperature: Math.round(response.data.main.temp),
+      humidity: response.data.main.humidity,
+      wind: Math.round(response.data.wind.speed),
+      description: response.data.weather[0].description,
+      city: response.data.name,
+      icon: "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
+    });
 
-        <p className="todays-weather">
-          <span>{weatherData.date}</span>
-          {` `}
-          <span>{weatherData.description}</span>
-          <br />
-          Humidity:
-          <span className="todays-weather-details">
+    setReady(true);
+  }
+
+  if (ready) {
+    return (
+      <div className="WeatherApp grid">
+        <div className="weather-info-left">
+          <h1>{weather.city}</h1>
+
+          <p className="todays-weather">
+            <span>Tuesday 07:45,</span>
             {` `}
-            {weatherData.humidity}%
-          </span>
-          , Wind:
-          <span className="todays-weather-details">
-            {` `}
-            {weatherData.wind} km/h
-          </span>
-        </p>
-      </div>
-
-      <div className="weather-app-temperature-container">
-        <div className="weather-app-icon">
-          <img
-            src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-            alt="overcast clouds"
-          />
+            <span className="capitalize">{weather.description}</span>
+            <br />
+            Humidity:
+            <span className="todays-weather-details">
+              {` `}
+              {weather.humidity}%
+            </span>
+            , Wind:
+            <span className="todays-weather-details">
+              {` `}
+              {weather.wind} km/h
+            </span>
+          </p>
         </div>
-        <span className="weather-app-temperature">
-          {weatherData.temperature}
-        </span>
-        <span className="weather-app-unit">°C</span>
+
+        <div className="weather-app-temperature-container">
+          <div className="weather-app-icon">
+            <img src={weather.icon} alt={weather.description} />
+          </div>
+          <span className="weather-app-temperature">{weather.temperature}</span>
+          <span className="weather-app-unit">°C</span>
+        </div>
+        <div className="weather-forecast" id="forecast"></div>
       </div>
-      <div className="weather-forecast" id="forecast"></div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "2b6fdad0cbd018949c50c70f72250726";
+    let city = "Leeuwarden";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+
+    return <h2>Loading...</h2>;
+  }
 }
