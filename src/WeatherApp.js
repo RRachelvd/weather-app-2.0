@@ -31,7 +31,8 @@ export default function WeatherApp(props) {
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       city: response.data.name,
-      icon: "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
+      icon: response.data.weather[0].icon,
+      image: `https://openweathermap.org/img/wn/${weather.icon}@2x.png`,
     });
 
     setReady(true);
@@ -76,7 +77,7 @@ export default function WeatherApp(props) {
 
           <div className="weather-app-temperature-container">
             <div className="weather-app-icon">
-              <img src={weather.icon} alt={weather.description} />
+              <img src={weather.image} alt={weather.description} />
             </div>
             <span className="weather-app-temperature">
               {weather.temperature}
