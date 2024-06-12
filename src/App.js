@@ -1,27 +1,15 @@
 import "./App.css";
 import WeatherApp from "./WeatherApp.js";
+import React from "react";
 
 export default function App() {
   return (
     <div className="weather-app-container">
-      <header>
-        <form id="search-form">
-          <input
-            type="search"
-            required
-            placeholder="Search for a city..."
-            className="search-input"
-          />
-          <input type="submit" value="Search" className="search-button" />
-        </form>
-      </header>
-      <main>
-        <WeatherApp defaultCity="Leeuwarden" />
+      <WeatherApp defaultCity="Leeuwarden" />
 
-        <div className="weather-forecast" id="forecast"></div>
-        <div className="weather-forecast" id="forecast"></div>
-        <div className="weather-forecast" id="forecast"></div>
-      </main>
+      <div className="weather-forecast" id="forecast"></div>
+      <div className="weather-forecast" id="forecast"></div>
+      <div className="weather-forecast" id="forecast"></div>
 
       <footer>
         <div>

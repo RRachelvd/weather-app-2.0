@@ -36,7 +36,7 @@ p {
   box-shadow: 15px 40px 80px rgba(65, 50, 100, 0.35);
 }
 
-header {
+#search-form {
   padding: 0 0 20px 0;
 }
 
@@ -119,10 +119,6 @@ h1 {
 .grid {
   display: grid;
   grid-template-columns: 3fr 1fr;
-}
-
-main {
-  margin-bottom: 45px;
 }
 
 .capitalize {
