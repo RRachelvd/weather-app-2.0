@@ -16,7 +16,7 @@ export default function App() {
         </form>
       </header>
       <main>
-        <WeatherApp />
+        <WeatherApp defaultCity="Leeuwarden" />
 
         <div className="weather-forecast" id="forecast"></div>
         <div className="weather-forecast" id="forecast"></div>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate.js";
 
-export default function WeatherApp() {
+export default function WeatherApp(props) {
   const [ready, setReady] = useState(false);
   const [weather, setWeather] = useState({});
 
@@ -11,6 +12,7 @@ export default function WeatherApp() {
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       city: response.data.name,
       icon: "http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png",
@@ -26,7 +28,9 @@ export default function WeatherApp() {
           <h1>{weather.city}</h1>
 
           <p className="todays-weather">
-            <span>Tuesday 07:45,</span>
+            <span>
+              <FormattedDate date={weather.date} />
+            </span>
             {` `}
             <span className="capitalize">{weather.description}</span>
             <br />
@@ -55,8 +59,7 @@ export default function WeatherApp() {
     );
   } else {
     const apiKey = "2b6fdad0cbd018949c50c70f72250726";
-    let city = "Leeuwarden";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric`;
 
     axios.get(apiUrl).then(handleResponse);
 
