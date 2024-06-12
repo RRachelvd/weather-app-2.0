@@ -24,7 +24,6 @@ export default function WeatherApp() {
   }
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeather({
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
@@ -90,6 +89,20 @@ export default function WeatherApp() {
     );
   } else {
     search();
-    return <h2>Loading...</h2>;
+    return (
+      <div>
+        <form id="search-form" onSubmit={handleSubmit}>
+          <input
+            type="search"
+            required
+            placeholder="Search for a city..."
+            className="search-input"
+            onChange={cityChange}
+          />
+          <input type="submit" value="Search" className="search-button" />
+        </form>
+        <h1 className="loading">Loading...</h1>
+      </div>
+    );
   }
 }

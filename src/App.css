@@ -73,6 +73,10 @@ h1 {
   color: var(--text-color);
 }
 
+h1.loading {
+  margin: 35px 0 20px 50px;
+}
+
 .WeatherApp {
   display: flex;
   justify-content: space-between;
