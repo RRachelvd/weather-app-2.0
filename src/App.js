@@ -5,7 +5,7 @@ import React from "react";
 export default function App() {
   return (
     <div className="weather-app-container">
-      <WeatherApp />
+      <WeatherApp defaultCity="Leeuwarden" />
 
       <div className="weather-forecast" id="forecast"></div>
       <div className="weather-forecast" id="forecast"></div>

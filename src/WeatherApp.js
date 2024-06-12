@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 
-export default function WeatherApp() {
+export default function WeatherApp(props) {
   const [ready, setReady] = useState(false);
   const [weather, setWeather] = useState({});
-  const [city, setCity] = useState("Leeuwarden");
+  const [city, setCity] = useState(props.defaultCity);
 
   function handleSubmit(event) {
     event.preventDefault();
