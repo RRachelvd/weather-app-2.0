@@ -8,8 +8,17 @@ export default function Forecast(props) {
   let [forecast, setForecast] = useState(null);
 
   function handleResponse(response) {
+    console.log(response.data);
     setForecast(response.data);
     setLoaded(true);
+  }
+
+  function day() {
+    let date = new Date(forecast.daily[0].time * 1000);
+    let day = date.getDay();
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    return days[day];
   }
 
   function search() {
@@ -26,7 +35,7 @@ export default function Forecast(props) {
         <div className="row">
           <div className="col">
             {" "}
-            <div className="weather-forecast-day">Wed</div>
+            <div className="weather-forecast-day">{day()}</div>
             <div className="weather-forecast-icon">
               <WeatherIcon code={forecast.daily[0].condition.icon} size={55} />
             </div>
