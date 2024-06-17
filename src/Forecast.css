@@ -7,7 +7,7 @@
 
 .weather-forecast-day {
   font-weight: bold;
-  color: var(--detail-color);
+  color: rgba(245, 245, 245, 0.9);
   font-size: 18px;
 }
 

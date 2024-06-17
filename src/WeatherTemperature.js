@@ -21,7 +21,7 @@ export default function WeatherTemperature(props) {
     return (
       <div className="weather-app-temperature-container">
         <div className="weather-app-icon">
-          <WeatherIcon code={props.icon} />
+          <WeatherIcon code={props.icon} size={75} />
         </div>
         <span className="weather-app-temperature">{props.celsius}</span>
         <span className="weather-app-unit">
@@ -48,7 +48,7 @@ export default function WeatherTemperature(props) {
           <a href="/" onClick={showCelsius}>
             °C
           </a>{" "}
-          |{" "}
+          /{" "}
           <a href="/" onClick={showFahrenheit}>
             °F
           </a>

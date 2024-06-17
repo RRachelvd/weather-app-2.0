@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature.js";
+import Forecast from "./Forecast.js";
 
 export default function WeatherApp(props) {
   const [ready, setReady] = useState(false);
@@ -80,6 +81,7 @@ export default function WeatherApp(props) {
             icon={weather.icon}
           />
         </div>
+        <Forecast city={weather.city} />
       </div>
     );
   } else {

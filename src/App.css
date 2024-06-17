@@ -117,10 +117,15 @@ h1.loading {
 }
 
 .WeatherApp .weather-app-unit {
-  margin-top: 36px;
+  margin-top: 38px;
   margin-left: 4px;
-  font-size: 28px;
+  font-size: 26px;
   color: var(--info-color);
+}
+
+.weather-app-unit a {
+  color: var(--info-color);
+  font-weight: 300;
 }
 
 .grid {
