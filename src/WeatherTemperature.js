@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import WeatherIcon from "./WeatherIcon.js";
 
 export default function WeatherTemperature(props) {
   let [unit, setUnit] = useState("celsius");
@@ -18,23 +19,28 @@ export default function WeatherTemperature(props) {
   }
   if (unit === "celsius") {
     return (
-      <span className="WeatherTemperature">
+      <div className="weather-app-temperature-container">
+        <div className="weather-app-icon">
+          <WeatherIcon code={props.icon} />
+        </div>
         <span className="weather-app-temperature">{props.celsius}</span>
         <span className="weather-app-unit">
           <a href="/" onClick={showCelsius}>
             °C
           </a>{" "}
-          |{" "}
-          <a href="/" onCLick={showFahrenheit}>
+          /{" "}
+          <a href="/" onClick={showFahrenheit}>
             °F
           </a>
         </span>
-        |
-      </span>
+      </div>
     );
   } else {
     return (
-      <span className="WeatherTemperature">
+      <div className="weather-app-temperature-container">
+        <div className="weather-app-icon">
+          <WeatherIcon code={props.icon} />
+        </div>
         <span className="weather-app-temperature">
           {Math.round(fahrenheit())}
         </span>
@@ -43,12 +49,11 @@ export default function WeatherTemperature(props) {
             °C
           </a>{" "}
           |{" "}
-          <a href="/" onCLick={showFahrenheit}>
+          <a href="/" onClick={showFahrenheit}>
             °F
           </a>
         </span>
-        |
-      </span>
+      </div>
     );
   }
 }

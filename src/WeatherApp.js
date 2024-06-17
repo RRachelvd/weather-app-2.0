@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon.js";
+import WeatherTemperature from "./WeatherTemperature.js";
 
 export default function WeatherApp(props) {
   const [ready, setReady] = useState(false);
@@ -75,16 +76,11 @@ export default function WeatherApp(props) {
               </span>
             </p>
           </div>
+          <WeatherTemperature
+            celsius={weather.temperature}
+            icon={weather.icon}
+          />
 
-          <div className="weather-app-temperature-container">
-            <div className="weather-app-icon">
-              <WeatherIcon code={weather.icon} />
-            </div>
-            <span className="weather-app-temperature">
-              {weather.temperature}
-            </span>
-            <span className="weather-app-unit">°C | °F</span>
-          </div>
           <div className="weather-forecast" id="forecast"></div>
         </div>
       </div>
