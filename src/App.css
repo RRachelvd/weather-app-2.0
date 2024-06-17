@@ -28,9 +28,9 @@ p {
   background: var(--background-color);
   max-width: 660px;
   margin: 50px auto;
-  padding-right: 42px;
-  padding-left: 42px;
-  padding-top: 38px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 35px;
   padding-bottom: 38px;
   border-radius: 10px;
   box-shadow: 15px 40px 80px rgba(65, 50, 100, 0.35);
@@ -101,6 +101,7 @@ h1.loading {
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 7px;
+  justify-content: end;
 }
 
 .WeatherApp .weather-app-icon {
@@ -124,7 +125,7 @@ h1.loading {
 
 .grid {
   display: grid;
-  grid-template-columns: 6fr 5fr;
+  grid-template-columns: 6fr 6fr;
 }
 
 .capitalize {
@@ -198,5 +199,9 @@ footer {
     width: 30%;
     padding: 10px 15px;
     font-size: 17px;
+  }
+
+  .WeatherApp .weather-app-temperature-container {
+    justify-content: left;
   }
 }
