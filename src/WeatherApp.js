@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
-import WeatherIcon from "./WeatherIcon.js";
 import WeatherTemperature from "./WeatherTemperature.js";
 
 export default function WeatherApp(props) {
