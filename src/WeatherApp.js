@@ -79,8 +79,6 @@ export default function WeatherApp(props) {
             celsius={weather.temperature}
             icon={weather.icon}
           />
-
-          <div className="weather-forecast" id="forecast"></div>
         </div>
       </div>
     );

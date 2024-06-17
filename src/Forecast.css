@@ -1,0 +1,32 @@
+.weather-forecast {
+  margin-top: 40px;
+  text-align: center;
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+.weather-forecast-day {
+  font-weight: bold;
+  color: var(--detail-color);
+  font-size: 18px;
+}
+
+.Forecast .icon {
+  margin: 15px auto;
+  text-align: center;
+  padding: 0;
+}
+
+.weather-forecast-temperature {
+  font-size: 14.5px;
+  text-align: center;
+}
+
+.weather-forecast-temperature-min {
+  color: rgba(245, 245, 245, 0.7);
+}
+.weather-forecast-temperature-max {
+  color: rgba(245, 245, 245, 0.9);
+  font-weight: 450;
+  margin-right: 20px;
+}

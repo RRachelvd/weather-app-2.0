@@ -1,15 +1,13 @@
 import "./App.css";
 import WeatherApp from "./WeatherApp.js";
 import React from "react";
+import Forecast from "./Forecast.js";
 
 export default function App() {
   return (
     <div className="weather-app-container">
       <WeatherApp defaultCity="Leeuwarden" />
-
-      <div className="weather-forecast" id="forecast"></div>
-      <div className="weather-forecast" id="forecast"></div>
-      <div className="weather-forecast" id="forecast"></div>
+      <Forecast />
 
       <footer>
         <div>

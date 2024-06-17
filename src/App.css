@@ -132,45 +132,6 @@ h1.loading {
   text-transform: capitalize;
 }
 
-.weather-forecast {
-  margin-top: 35px;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-}
-
-.weather-forecast-day {
-  font-weight: bold;
-  color: var(--detail-color);
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-.weather-forecast-icon {
-  width: 60px;
-  height: 60px;
-  display: block;
-  margin: 0 auto;
-}
-
-.weather-forecast-temperature {
-  font-size: 14.5px;
-  margin-top: 12px;
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-}
-
-.weather-forecast-temperature-min {
-  color: var(--info-color);
-}
-.weather-forecast-temperature-max {
-  color: var(--info-color);
-  font-weight: 450;
-  margin-left: 2px;
-  margin-right: 8px;
-}
-
 footer {
   border-top: 1px solid #efeef1b6;
   color: var(--info-color);
