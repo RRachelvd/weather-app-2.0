@@ -103,7 +103,8 @@ h1.loading {
 }
 
 .WeatherApp .weather-app-icon {
-  margin-top: 16px;
+  margin-top: 30px;
+  margin-right: 12px;
 }
 
 .WeatherApp .weather-app-temperature {
