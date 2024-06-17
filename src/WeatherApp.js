@@ -83,7 +83,7 @@ export default function WeatherApp(props) {
             <span className="weather-app-temperature">
               {weather.temperature}
             </span>
-            <span className="weather-app-unit">°C</span>
+            <span className="weather-app-unit">°C | °F</span>
           </div>
           <div className="weather-forecast" id="forecast"></div>
         </div>
