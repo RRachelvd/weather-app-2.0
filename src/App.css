@@ -83,7 +83,7 @@ h1.loading {
 }
 
 .WeatherApp .weather-info-left {
-  margin-left: 28px;
+  margin-left: 20px;
   margin-top: 30px;
 }
 
@@ -98,7 +98,8 @@ h1.loading {
 
 .WeatherApp .weather-app-temperature-container {
   display: flex;
-  margin-right: 18px;
+  margin-right: 20px;
+  margin-left: 20px;
   margin-top: 7px;
 }
 
@@ -117,13 +118,13 @@ h1.loading {
 
 .WeatherApp .weather-app-unit {
   margin-top: 36px;
-  font-size: 28px;
+  font-size: 25px;
   color: var(--info-color);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 6fr 5fr;
 }
 
 .capitalize {
@@ -177,7 +178,7 @@ footer {
   font-size: 15px;
 }
 
-@media (max-width: 850px) {
+@media (max-width: 720px) {
   .grid {
     grid-template-columns: 1fr;
   }
