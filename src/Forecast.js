@@ -25,7 +25,6 @@ export default function Forecast(props) {
     return (
       <div className="Forecast weather-forecast" id="forecast">
         <div className="row">
-          // eslint-disable-next-line
           {forecast.map(function (dailyForecast, index) {
             if (index < 6) {
               return (
@@ -33,6 +32,8 @@ export default function Forecast(props) {
                   <WeatherForecastDay data={dailyForecast} />
                 </div>
               );
+            } else {
+              return null;
             }
           })}
         </div>
