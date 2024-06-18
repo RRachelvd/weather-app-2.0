@@ -1,14 +1,16 @@
 .weather-forecast {
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
   margin-bottom: 50px;
-  margin-left: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .weather-forecast-day {
   font-weight: bold;
   color: rgba(245, 245, 245, 0.9);
   font-size: 18px;
+  margin-top: 45px;
 }
 
 .Forecast .icon {
@@ -28,5 +30,12 @@
 .weather-forecast-temperature-max {
   color: rgba(245, 245, 245, 0.9);
   font-weight: 450;
-  margin-right: 20px;
+  margin-right: 17px;
+}
+
+@media (max-width: 750px) {
+  .weather-forecast {
+    margin-top: 40px;
+    margin-bottom: 70px;
+  }
 }

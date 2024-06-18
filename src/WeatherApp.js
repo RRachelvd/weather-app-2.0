@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import WeatherTemperature from "./WeatherTemperature.js";
@@ -8,6 +8,10 @@ export default function WeatherApp(props) {
   const [ready, setReady] = useState(false);
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState(props.defaultCity);
+
+  useEffect(() => {
+    setReady(false);
+  }, [weather.city]);
 
   function handleSubmit(event) {
     event.preventDefault();
