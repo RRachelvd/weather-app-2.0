@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import WeatherIcon from "./WeatherIcon";
 import "./Forecast.css";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay.js";
 
 export default function Forecast(props) {
   let [loaded, setLoaded] = useState(false);
@@ -9,16 +9,8 @@ export default function Forecast(props) {
 
   function handleResponse(response) {
     console.log(response.data);
-    setForecast(response.data);
+    setForecast(response.data.daily);
     setLoaded(true);
-  }
-
-  function day() {
-    let date = new Date(forecast.daily[0].time * 1000);
-    let day = date.getDay();
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
-    return days[day];
   }
 
   function search() {
@@ -34,19 +26,7 @@ export default function Forecast(props) {
       <div className="Forecast weather-forecast" id="forecast">
         <div className="row">
           <div className="col">
-            {" "}
-            <div className="weather-forecast-day">{day()}</div>
-            <div className="weather-forecast-icon">
-              <WeatherIcon code={forecast.daily[0].condition.icon} size={55} />
-            </div>
-            <div className="weather-forecast-temperature">
-              <span className="weather-forecast-temperature-max">
-                {Math.round(forecast.daily[0].temperature.maximum)}°
-              </span>
-              <span className="weather-forecast-temperature-min">
-                {Math.round(forecast.daily[0].temperature.minimum)}°
-              </span>
-            </div>
+            <WeatherForecastDay data={forecast[0]} />
           </div>
         </div>
       </div>
