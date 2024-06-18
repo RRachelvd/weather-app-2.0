@@ -175,4 +175,11 @@ footer {
   .WeatherApp .weather-app-temperature-container {
     justify-content: left;
   }
+
+  .WeatherApp .weather-app-unit {
+    font-size: 23px;
+  }
+  .WeatherApp .weather-app-temperature {
+    font-size: 70px;
+  }
 }
