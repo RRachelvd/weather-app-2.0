@@ -30,7 +30,7 @@
 .weather-forecast-temperature-max {
   color: rgba(245, 245, 245, 0.9);
   font-weight: 450;
-  margin-right: 17px;
+  margin-right: 14px;
 }
 
 @media (max-width: 750px) {
