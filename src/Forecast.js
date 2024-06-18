@@ -22,10 +22,10 @@ export default function Forecast(props) {
   }
 
   if (loaded) {
-    // eslint-disable-next-line
     return (
       <div className="Forecast weather-forecast" id="forecast">
         <div className="row">
+          // eslint-disable-next-line
           {forecast.map(function (dailyForecast, index) {
             if (index < 6) {
               return (
