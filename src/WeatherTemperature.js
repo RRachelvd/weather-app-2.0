@@ -39,7 +39,7 @@ export default function WeatherTemperature(props) {
     return (
       <div className="weather-app-temperature-container">
         <div className="weather-app-icon">
-          <WeatherIcon code={props.icon} />
+          <WeatherIcon code={props.icon} size={75} />
         </div>
         <span className="weather-app-temperature">
           {Math.round(fahrenheit())}
