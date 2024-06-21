@@ -30,6 +30,7 @@ export default function WeatherApp(props) {
   }
 
   function handleResponse(response) {
+    console.log(response.data);
     setWeather({
       temperature: Math.round(response.data.main.temp),
       humidity: response.data.main.humidity,
@@ -39,6 +40,7 @@ export default function WeatherApp(props) {
       city: response.data.name,
       icon: response.data.weather[0].icon,
       image: `https://openweathermap.org/img/wn/${weather.icon}@2x.png`,
+      userCity: city,
     });
 
     setReady(true);
@@ -85,7 +87,7 @@ export default function WeatherApp(props) {
             icon={weather.icon}
           />
         </div>
-        <Forecast city={weather.city} />
+        <Forecast city={weather.userCity} />
       </div>
     );
   } else {
